@@ -1,7 +1,6 @@
 import { ITask } from "@/types/tasks";
 import { useState } from "react";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
-import { useRouter } from "next/navigation";
 import Modal from "./Model";
 import { deleteTodo, editTodo } from "@/utils/api";
 
@@ -9,7 +8,7 @@ const Task: React.FC<{ task: ITask, fetchTasks: () => void }> = ({ task, fetchTa
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [openModalDeleted, setOpenModalDeleted] = useState(false);
   const [taskToEdit, setTaskToEdit] = useState(task.text);
-  const router = useRouter();
+ 
 
   const handleSubmitEditTodo = async (e: React.FormEvent) => {
     e.preventDefault();

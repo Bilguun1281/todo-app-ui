@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AddTask from "../components/AddTask";
 import TodoList from "../components/TodoList";
+import { ITask } from "@/types/tasks";
 
 export default function Dashboard() {
-  const [tasks, setTasks] = useState<any[] | null>(null);
+  const [tasks, setTasks] = useState<ITask[] | null>(null);
   const [isLoading, setLoading] = useState<boolean>(true);
   const [userId, setUserId] = useState<string | null>(null); // Allow both string and null
   const [username, setUsername] = useState<string | null>(null); // Allow both string and null

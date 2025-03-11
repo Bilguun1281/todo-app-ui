@@ -19,9 +19,14 @@ export default function SignIn() {
       if (user) {
         router.push("/dashboard"); // Redirect on success
       }
-    } catch (err: any) {
-      console.error("SignIn error:", err);
-      setError("Invalid username or password");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.error("SignIn error:", err.message);
+        setError("Invalid username or password");
+      } else {
+        console.error("Unexpected error:", err);
+        setError("An unexpected error occurred");
+      }
     }
   };
 
@@ -74,7 +79,7 @@ export default function SignIn() {
         </form>
 
         <div className="mt-4 text-center">
-          <p className="text-sm">Don't have an account?</p>
+          <p className="text-sm">Don&apos;t have an account?</p>
           <button
             onClick={() => router.push("/signup")}
             className="text-indigo-600 text-sm font-medium"

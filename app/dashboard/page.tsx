@@ -29,7 +29,7 @@ export default function Dashboard() {
 
   const fetchTasks = async (id: string) => {
     try {
-      const response = await fetch(`https://todo-app-backend-1-hdmb.onrender.com/api/tasks/user/${id}`, {
+      const response = await fetch(`https://todo-app-backend-9dbe.onrender.com/api/tasks/user/${id}`, {
         credentials: "include",
       });
       if (!response.ok) throw new Error("Failed to fetch tasks");

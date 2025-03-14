@@ -4,8 +4,8 @@ import { ITask } from "../types/tasks";
 
 // const API_URL = "http://localhost:8080/api/tasks";
 // const API_URL_USER ="http://localhost:8080/api/users";
-const API_URL = "https://todo-app-backend-1-hdmb.onrender.com/api/tasks";
-const API_URL_USER ="https://todo-app-backend-1-hdmb.onrender.com/api/users";
+const API_URL = "https://todo-app-backend-9dbe.onrender.com/api/tasks";
+const API_URL_USER ="https://todo-app-backend-9dbe.onrender.com/api/users";
 
 
 // 🔹 Register User

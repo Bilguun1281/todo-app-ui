@@ -1,28 +1,11 @@
 "use client"
 import { IUser } from "@/types/user";
 import { ITask } from "../types/tasks";
-import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:8080/api/tasks";
-const API_URL_USER ="http://localhost:8080/api/users";
-
-
-// user api
-
-// register user
-// export const CreateUser = async (user: IUser): Promise<IUser> => {
-//   const res = await fetch(`${API_URL_USER}/register`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(user)
-//   })
-//   const newUser = await res.json();
-//   return newUser;
-// }
-
-
+// const API_URL = "http://localhost:8080/api/tasks";
+// const API_URL_USER ="http://localhost:8080/api/users";
+const API_URL = "https://todo-app-backend-1-hdmb.onrender.com/api/tasks";
+const API_URL_USER ="https://todo-app-backend-1-hdmb.onrender.com/api/users";
 
 
 // 🔹 Register User
@@ -77,26 +60,6 @@ export const getuser = async (): Promise<IUser[]> => {
 
 
 // task api
-
-// get all task of user
-export const getAllTodos = async ()=> {
-
-  const [data, setData] = useState(null)
-  const [isLoading, setLoading] = useState(true)
-   
-  useEffect(() => {
-    fetch('http://localhost:8080/api/tasks/user/1', {
-      credentials: 'include', })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data)
-        setLoading(false)
-      })
-  }, [])
-    // if (isLoading) return <p>Loading...</p>
-  // if (!data) return <p>No profile data</p>
-}
-
 // add task
 export const addTodo = async (todo: Omit<ITask, "id">): Promise<ITask> => {
 
